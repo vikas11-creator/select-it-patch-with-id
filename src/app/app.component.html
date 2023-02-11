@@ -1,0 +1,14 @@
+<form [formGroup]="customerForm">
+  <select formControlName="customer" (change)="onCustomerChanged($event)">
+    <option>(new customer)</option>
+    <option *ngFor="let customer of customers" [value]="customer.name">
+      {{ customer.name }}
+    </option>
+  </select>
+  <select formControlName="order">
+    <option>(new order)</option>
+    <option *ngFor="let order of filteredOrders" [value]="order.id">
+      {{ order.name }}
+    </option>
+  </select>
+</form>
